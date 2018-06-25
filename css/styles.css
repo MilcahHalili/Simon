@@ -1,0 +1,97 @@
+body {
+    background-color: #ff9966;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: linear-gradient(to bottom, #ff9966 0%, #ff99cc 100%);
+}
+.box2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: linear-gradient(to bottom, #ff99cc 0%, #ff9966 100%);
+}
+
+.playerTurn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.count {
+    font-size: 42px;
+    font-family: 'Abril Fatface', cursive;
+    color: #FFFFFF;
+}
+
+#startBtn {
+    font-size: 16px;
+    font-family: 'Abril Fatface', cursive;
+    color: #FFFFFF;
+    background-color: #ff99cc;
+    border-width: .25em;
+}
+
+.powerBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#onBtn {
+    font-size: 16px;
+    font-family: 'Abril Fatface', cursive;
+    color: #FFFFFF;
+    background-color: #ff99cc;
+    border-width: .25em;
+    margin-right: .5em;
+}
+
+#offBtn {
+    font-size: 16px;
+    font-family: 'Abril Fatface', cursive;
+    color: #FFFFFF;
+    background-color: #ff99cc;
+    border-width: .25em;
+    margin-left: .5em;
+}
+
+.startBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 1.5%;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+.circle:before {
+    content: '';
+    display: inline-block;
+    padding-top: 100%;
+}
+#c0 {
+    background: #C04CFD;
+    margin: 2.5%;
+}
+#c1 {
+    background: #FFFD98;
+    margin: 2.5%;
+}
+#c2 {
+    background: #23f0ff;
+    margin: 2.5%;
+}
+#c3 {
+    background: rgb(71, 233, 82);
+    margin: 2.5%;
+}
