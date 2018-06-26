@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script defer src="js/main.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
@@ -13,37 +12,24 @@
 <body>
     <div class="board">
         <div class="box">
-            <div class="circle" id="c0"></div>
-            <div class="circle" id="c1"></div>
+            <div class="circ" id="c0"></div>
+            <div class="circ" id="c1"></div>
         </div>
         <div class="box2">
-            <div class="circle" id="c2"></div>
-            <div class="circle" id="c3"></div>
+            <div class="circ" id="c2"></div>
+            <div class="circ" id="c3"></div>
         </div>
-        <div class="playerTurn">
-            <h1 class="count"></h1>
+        <div class="playerTurnBox">
+            <h1 id="turnNum"></h1>
         </div>
-        <div class="startBox">
+        <div class="startGameBox">
                 <button id="startBtn">Start</button>
         </div>
-        <div class="powerBtns">
+        <div class="powerBox">
             <button id="onBtn">ON</button>
             <button id="offBtn">OFF</button>
         </div>
     </div>
-            <!--
-    <div id="countBox">
-        <div id="countDisplay">
-            <div id="displayText">
-            </div>
-        </div>
-        <div id="countText">Count</div>
-    </div>
-    <div id="startBox">
-        <div id="startButton"></div>
-        <div id="startText">Start</div>
-    </div> 
-    -->
-    </div>
+    <script defer src="js/main.js"></script>
 </body>
 </html>

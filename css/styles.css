@@ -15,19 +15,25 @@ body {
     background: linear-gradient(to bottom, #ff99cc 0%, #ff9966 100%);
 }
 
-.playerTurn {
+.playerTurnBox {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
 }
-
-.count {
+#turnNum {
     font-size: 42px;
     font-family: 'Abril Fatface', cursive;
     color: #FFFFFF;
 }
 
+.startGameBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 1.5%;
+}
 #startBtn {
     font-size: 16px;
     font-family: 'Abril Fatface', cursive;
@@ -36,13 +42,12 @@ body {
     border-width: .25em;
 }
 
-.powerBtns {
+.powerBox {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
 }
-
 #onBtn {
     font-size: 16px;
     font-family: 'Abril Fatface', cursive;
@@ -51,7 +56,6 @@ body {
     border-width: .25em;
     margin-right: .5em;
 }
-
 #offBtn {
     font-size: 16px;
     font-family: 'Abril Fatface', cursive;
@@ -61,23 +65,23 @@ body {
     margin-left: .5em;
 }
 
-.startBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    margin-bottom: 1.5%;
-}
-
-.circle {
+.circ {
     width: 200px;
     height: 200px;
     border-radius: 50%;
+    /* pointer-events: none; */
   }
-.circle:before {
+.circ:before {
     content: '';
     display: inline-block;
     padding-top: 100%;
+}
+.circ:active {
+    opacity: .5;
+}
+.activated {
+    opacity: .5;
+    border: 2px solid black;
 }
 #c0 {
     background: #C04CFD;
