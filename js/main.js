@@ -1,9 +1,9 @@
 /*----- constants -----*/
-var circles = [0, 1, 2, 3];
 
 /*----- app's state (variables) -----*/
-var running = false;
 var circleSequence = [];
+var playerClicks = [];
+var gameOver, ignoreClicks;
 
 /*----- cached element references -----*/
 var turnEl = document.querySelector('h1');
@@ -11,79 +11,78 @@ var circBtns = document.querySelectorAll('.circ');
 var startBtn = document.getElementById('startBtn');
 var onBtn = document.getElementById('onBtn');
 var offBtn = document.getElementById('offBtn');
-var rand = Math.floor(Math.random()*circles.length);
+
+// var flashCirc = document.createElement('style');
 
 /*----- event listeners -----*/
 
-onBtn.addEventListener('click', gameOn);
-
 startBtn.addEventListener('click', startGame);
 
-offBtn.addEventListener('click', gameOff);
-
-// circBtns.addEventListener('click', )
+document.querySelector('section').addEventListener('click', handleCircClick);
 
 /*----- functions -----*/
 function initialize() {
-    board = [];
-    turn = 0;
-    startBtn.disabled = true;
-    randomColor();
-    render(); // the last thing it does
+    gameOver = true;
+    render();
 }
 
 // responsible for transfering all state to the DOM
 function render() {
-    turnEl.textContent = turn;
-}
-
-function handleUpdateTurn(nextTurn) {
-    turn += nextTurn;
-    render();
-}
-
-initialize();
-
-function gameOn() {
-    startBtn.disabled = false;
-}
-
-function gameOff() {
-    startBtn.disabled = true;
-    onBtn.disabled = false;
-    initialize();
+    startBtn.disabled = !gameOver;
+    turnEl.textContent = gameOver ? 'Click start button.' : circleSequence.length;
 }
 
 function startGame() {
-    startBtn.disabled = true;
-    onBtn.disabled = true;
-    running = true;
-    handleUpdateTurn(1);
+    gameOver = false;
+    circleSequence = [];
+    nextSequence();
+    console.log(circleSequence + ' circleSequence');
+    console.log(playerClicks + ' playerClicks');
     gameSequence();
-}
-
-function randomColor() {
-    var rand = Math.floor(Math.random()*circles.length);
-    circleSequence.push(circBtns[rand]);
-    // render();
-}
-
-function gameSequence() {
-    circleSequence.forEach(function(elem, idx) {
-        setTimeout(function() {
-            var intervalId = setInterval(function() {
-            if (elem.className === 'circ') {
-                elem.className += ' activated';    
-            } else {
-                elem.className = 'circ';
-                clearInterval(intervalId);
-            }    
-            }, 1000);
-        }, 1000 + (idx * 1000));
-        })
     render();
 }
 
-// function playerSequence() {
-    
-// }
+// gameplay functionality
+
+function handleCircClick(evt) {
+    if (!evt.target.classList.contains('circ')) return;
+    var idx = parseInt(evt.target.id.replace('c', ''));
+    playerClicks.push(idx);
+    if (idx === circleSequence[playerClicks.length - 1]) {
+        console.log('correct')
+        if (circleSequence.length === playerClicks.length) {
+            nextSequence();
+            gameSequence();
+        }
+        console.log(circleSequence + ' circleSequence');
+        console.log(playerClicks + ' playerClicks');
+    } else {
+        gameOver = true;
+    }
+    render();
+}
+
+function nextSequence() {
+    var rand = Math.floor(Math.random() * 4);
+    circleSequence.push(rand);
+}
+
+function gameSequence() {
+    ignoreClicks = true;
+    circleSequence.forEach(function(elem, idx) {
+        // setTimeout(function() {
+        //     add activated class that highlights to circle for elem 
+        //     optionally play sound
+        //     circBtn.classList.add('activated');
+        //     setTimeout(function() {
+        //             remove activated class that highlighted
+        //             stop playing (myPlayer.pause())
+        //             div.classList.remove("foo");
+        //         if (idx === circleSequence.length - 1) ignoreClicks = false;
+        //     }, 900);
+        // }, 1000 + (idx * 1000));
+    });
+    playerClicks = [];
+}
+
+initialize();

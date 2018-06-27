@@ -22,8 +22,9 @@ body {
     flex-wrap: nowrap;
 }
 #turnNum {
-    font-size: 42px;
-    font-family: 'Abril Fatface', cursive;
+    font-size: 60px;
+    font-family: 'Ubuntu', sans-serif;
+
     color: #FFFFFF;
 }
 
@@ -35,41 +36,17 @@ body {
     margin-bottom: 1.5%;
 }
 #startBtn {
-    font-size: 16px;
-    font-family: 'Abril Fatface', cursive;
+    font-size: 28px;
+    font-family: 'Ubuntu', sans-serif;
     color: #FFFFFF;
     background-color: #ff99cc;
     border-width: .25em;
-}
-
-.powerBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-#onBtn {
-    font-size: 16px;
-    font-family: 'Abril Fatface', cursive;
-    color: #FFFFFF;
-    background-color: #ff99cc;
-    border-width: .25em;
-    margin-right: .5em;
-}
-#offBtn {
-    font-size: 16px;
-    font-family: 'Abril Fatface', cursive;
-    color: #FFFFFF;
-    background-color: #ff99cc;
-    border-width: .25em;
-    margin-left: .5em;
 }
 
 .circ {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    /* pointer-events: none; */
   }
 .circ:before {
     content: '';
@@ -81,8 +58,11 @@ body {
 }
 .activated {
     opacity: .5;
-    border: 2px solid black;
+    border: 8px solid #ffffff;
 }
+/* .avoid-clicks {
+    pointer-events: none;
+  } */
 #c0 {
     background: #C04CFD;
     margin: 2.5%;
