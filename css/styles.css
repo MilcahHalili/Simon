@@ -79,3 +79,7 @@ body {
     background: rgb(71, 233, 82);
     margin: 2.5%;
 }
+
+.circ.avoid-clicks {
+    pointer-events: none;
+}
