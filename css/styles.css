@@ -19,31 +19,40 @@ body {
     background: linear-gradient(to bottom, #ff99cc 0%, #ff9966 100%);
 }
 
-.playerTurnBox {
+.player-turn-box {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
 }
-#turnNum {
+#turn-num {
     font-size: 46px;
     font-family: 'Ubuntu', sans-serif;
     color: #FFFFFF;
 }
 
-.startGameBox {
+.btn-box {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
     margin-bottom: 1.5%;
 }
-#startBtn {
+#start-btn {
     font-size: 28px;
     font-family: 'Ubuntu', sans-serif;
     color: #FFFFFF;
     background-color: #ff99cc;
-    border-width: .10em;
+    border-width: .10em solid #ffffff;
+    margin-right: .75%;
+}
+#replay-btn {
+    font-size: 28px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #FFFFFF;
+    background-color: #ff99cc;
+    border-width: .10em solid #ffffff;
+    margin-left: .75%;
 }
 
 .circ {

@@ -10,11 +10,12 @@ var gameOver, ignoreClicks;
 
 /*----- cached element references -----*/
 var turnEl = document.querySelector('h1');
-var startBtn = document.getElementById('startBtn');
+var startBtn = document.getElementById('start-btn');
 
 /*----- event listeners -----*/
 
 startBtn.addEventListener('click', startGame);
+document.getElementById('replay-btn').addEventListener('click', replay);
 document.querySelector('section').addEventListener('click', handleCircClick);
 document.getElementById('c0').addEventListener('click', function() {
     player.src = sounds[0];
@@ -32,23 +33,18 @@ document.getElementById('c3').addEventListener('click', function() {
     player.src = sounds[3];
     player.play();
 });
-// function disableBtns(){
-//     document.getElementsByClassName('circ').disabled = true;
-// }
-// function enableBtns(){
-//     document.getElementsByClassName('circ').disabled = false;
-// }
 
 /*----- functions -----*/
 function initialize() {
     gameOver = true;
+    ignoreClicks = true;
     render();
 }
 
 // Responsible for transfering all state to the DOM
 function render() {
     startBtn.disabled = !gameOver;
-    turnEl.textContent = gameOver ? 'Click start button.' : circleSequence.length;
+    turnEl.textContent = gameOver ? 'CLICK START BUTTON' : circleSequence.length;
 }
 
 function startGame() {
@@ -61,6 +57,11 @@ function startGame() {
     render();
 }
 
+function replay() {
+    initialize();
+    startGame();
+}
+
 function clearState() {
     if (gameOver = true) {
     circleSequence = [];
@@ -70,6 +71,7 @@ function clearState() {
 // Gameplay functionality
 
 function handleCircClick(evt) {
+    if (ignoreClicks) return;
     if (!evt.target.classList.contains('circ')) return;
     evt.className += ' activated';
     var idx = parseInt(evt.target.id.replace('c', ''));
@@ -96,7 +98,6 @@ function nextSequence() {
 
 function gameSequence() {
     ignoreClicks = true;
-    freezeBtns();
     circleSequence.forEach(function(seqIdx, idx) {
         setTimeout(function() {
             var elem = document.getElementById('c' + seqIdx);
@@ -111,29 +112,6 @@ function gameSequence() {
         }, 500 + (idx * 1000));
     });
     playerClicks = [];
-    unFreezeBtns();
-}
-
-function freezeBtns() {
-    var elems = document.getElementsByClassName('circ');
-    for (var i = 0; i < elems.length; i++) {
-        var elem = elems[i];
-        elem.addEventListener('click', freezeClicks);
-    }
-}
-
-function unFreezeBtns() {
-    var elems = document.getElementsByClassName('circ');
-    for (var i = 0; i < elems.length; i++) {
-        var elem = elems[i];
-        elem.removeEventListener('click', freezeClicks);
-    }
-}
-
-function freezeClicks(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    return false;
 }
 
 initialize();
