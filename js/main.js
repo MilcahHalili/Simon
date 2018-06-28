@@ -1,6 +1,6 @@
 /*----- constants -----*/
-var sounds = [];
-var audio = new Audio();
+// var sounds = [];
+// var player = new Audio();
 
 /*----- app's state (variables) -----*/
 var circleSequence = [];
@@ -81,7 +81,7 @@ function gameSequence() {
         setTimeout(function() {
             var elem = document.getElementById('c' + seqIdx);
             elem.className += ' activated';
-            player.src = sounds[seqIdx];
+            // player.src = sounds[seqIdx];
             setTimeout(function() {
                 elem.classList.remove('activated');
                 player.pause();
