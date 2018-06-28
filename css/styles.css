@@ -36,7 +36,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    margin-bottom: 1.5%;
 }
 #start-btn {
     font-size: 28px;
@@ -44,7 +43,7 @@ body {
     color: #FFFFFF;
     background-color: #ff99cc;
     border-width: .10em solid #ffffff;
-    margin-right: .75%;
+    margin-right: 1%;
 }
 #replay-btn {
     font-size: 28px;
@@ -52,7 +51,7 @@ body {
     color: #FFFFFF;
     background-color: #ff99cc;
     border-width: .10em solid #ffffff;
-    margin-left: .75%;
+    margin-left: 1%;
 }
 
 .circ {
