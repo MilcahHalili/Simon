@@ -1,4 +1,6 @@
 /*----- constants -----*/
+var sounds = [];
+var audio = new Audio();
 
 /*----- app's state (variables) -----*/
 var circleSequence = [];
@@ -7,12 +9,10 @@ var gameOver, ignoreClicks;
 
 /*----- cached element references -----*/
 var turnEl = document.querySelector('h1');
-var circBtns = document.querySelectorAll('.circ');
 var startBtn = document.getElementById('startBtn');
 var onBtn = document.getElementById('onBtn');
 var offBtn = document.getElementById('offBtn');
-
-// var flashCirc = document.createElement('style');
+var circBtn = document.querySelectorAll('circ');
 
 /*----- event listeners -----*/
 
@@ -42,10 +42,17 @@ function startGame() {
     render();
 }
 
+function clearState() {
+    if (gameOver = true) {
+    circleSequence = [];
+    }
+}
+
 // gameplay functionality
 
 function handleCircClick(evt) {
     if (!evt.target.classList.contains('circ')) return;
+    evt.className += ' activated';
     var idx = parseInt(evt.target.id.replace('c', ''));
     playerClicks.push(idx);
     if (idx === circleSequence[playerClicks.length - 1]) {
@@ -56,9 +63,10 @@ function handleCircClick(evt) {
         }
         console.log(circleSequence + ' circleSequence');
         console.log(playerClicks + ' playerClicks');
-    } else {
-        gameOver = true;
-    }
+        } else {
+            gameOver = true;
+            clearState();
+        }
     render();
 }
 
@@ -69,18 +77,17 @@ function nextSequence() {
 
 function gameSequence() {
     ignoreClicks = true;
-    circleSequence.forEach(function(elem, idx) {
-        // setTimeout(function() {
-        //     add activated class that highlights to circle for elem 
-        //     optionally play sound
-        //     circBtn.classList.add('activated');
-        //     setTimeout(function() {
-        //             remove activated class that highlighted
-        //             stop playing (myPlayer.pause())
-        //             div.classList.remove("foo");
-        //         if (idx === circleSequence.length - 1) ignoreClicks = false;
-        //     }, 900);
-        // }, 1000 + (idx * 1000));
+    circleSequence.forEach(function(seqIdx, idx) {
+        setTimeout(function() {
+            var elem = document.getElementById('c' + seqIdx);
+            elem.className += ' activated';
+            player.src = sounds[seqIdx];
+            setTimeout(function() {
+                elem.classList.remove('activated');
+                player.pause();
+                if (idx === circleSequence.length - 1) ignoreClicks = false;
+            }, 800)
+        }, 500 + (idx * 1000));
     });
     playerClicks = [];
 }

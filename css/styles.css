@@ -1,3 +1,7 @@
+html, body, * {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #ff9966;
 }
@@ -22,9 +26,8 @@ body {
     flex-wrap: nowrap;
 }
 #turnNum {
-    font-size: 60px;
+    font-size: 46px;
     font-family: 'Ubuntu', sans-serif;
-
     color: #FFFFFF;
 }
 
@@ -40,7 +43,7 @@ body {
     font-family: 'Ubuntu', sans-serif;
     color: #FFFFFF;
     background-color: #ff99cc;
-    border-width: .25em;
+    border-width: .10em;
 }
 
 .circ {
@@ -56,13 +59,10 @@ body {
 .circ:active {
     opacity: .5;
 }
-.activated {
+.circ.activated {
     opacity: .5;
     border: 8px solid #ffffff;
 }
-/* .avoid-clicks {
-    pointer-events: none;
-  } */
 #c0 {
     background: #C04CFD;
     margin: 2.5%;
