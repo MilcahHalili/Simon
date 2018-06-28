@@ -44,7 +44,7 @@ body {
     color: #FFFFFF;
     background-color: #ff99cc;
     border-width: .10em solid #ffffff;
-    margin-right: .75%;
+    margin-right: 1%;
 }
 #replay-btn {
     font-size: 28px;
@@ -52,11 +52,7 @@ body {
     color: #FFFFFF;
     background-color: #ff99cc;
     border-width: .10em solid #ffffff;
-<<<<<<< HEAD
-    margin-right: .75%;
-=======
-    margin-left: .75%;
->>>>>>> master
+    margin-left: 1%;
 }
 
 .circ {
