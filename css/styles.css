@@ -1,93 +1,87 @@
 html, body, * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
-
 body {
-    background-color: #ff9966;
+	background-color: #ff9966;
 }
-
 .box {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background: linear-gradient(to bottom, #ff9966 0%, #ff99cc 100%);
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	background: linear-gradient(to bottom, #ff9966 0%, #ff99cc 100%);
 }
 .box2 {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background: linear-gradient(to bottom, #ff99cc 0%, #ff9966 100%);
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	background: linear-gradient(to bottom, #ff99cc 0%, #ff9966 100%);
 }
-
 .player-turn-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
 }
 #turn-num {
-    font-size: 46px;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FFFFFF;
+	font-size: 46px;
+	font-family: 'Ubuntu', sans-serif;
+	color: #FFFFFF;
 }
-
 .btn-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
 }
 #start-btn {
-    font-size: 28px;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FFFFFF;
-    background-color: #ff99cc;
-    border-width: .10em solid #ffffff;
-    margin-right: 1%;
+	font-size: 28px;
+	font-family: 'Ubuntu', sans-serif;
+	color: #FFFFFF;
+	background-color: #ff99cc;
+	border-width: .10em solid #ffffff;
+	margin-right: 1%;
 }
 #replay-btn {
-    font-size: 28px;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FFFFFF;
-    background-color: #ff99cc;
-    border-width: .10em solid #ffffff;
-    margin-left: 1%;
+	font-size: 28px;
+	font-family: 'Ubuntu', sans-serif;
+	color: #FFFFFF;
+	background-color: #ff99cc;
+	border-width: .10em solid #ffffff;
+	margin-left: 1%;
 }
-
 .circ {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-  }
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
 .circ:before {
-    content: '';
-    display: inline-block;
-    padding-top: 100%;
+	content: '';
+	display: inline-block;
+	padding-top: 100%;
 }
 .circ:active {
-    opacity: .5;
+	opacity: .5;
 }
 .circ.activated {
-    opacity: .5;
-    border: 8px solid #ffffff;
+	opacity: .5;
+	border: 8px solid #ffffff;
 }
 #c0 {
-    background: #C04CFD;
-    margin: 2.5%;
+	background: #C04CFD;
+	margin: 2.5%;
 }
 #c1 {
-    background: #FFFD98;
-    margin: 2.5%;
+	background: #FFFD98;
+	margin: 2.5%;
 }
 #c2 {
-    background: #23f0ff;
-    margin: 2.5%;
+	background: #23f0ff;
+	margin: 2.5%;
 }
 #c3 {
-    background: rgb(71, 233, 82);
-    margin: 2.5%;
+	background: rgb(71, 233, 82);
+	margin: 2.5%;
 }
-
 .circ.avoid-clicks {
-    pointer-events: none;
+	pointer-events: none;
 }
