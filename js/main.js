@@ -48,8 +48,6 @@ function startGame() {
 	gameOver = false;
 	circleSequence = [];
 	getNextTurn();
-	console.log(circleSequence + ' circleSequence');
-	console.log(playerClicks + ' playerClicks');
 	animateSequence();
 	render();
 }
@@ -67,13 +65,10 @@ function handleCircClick(evt) {
 	var idx = parseInt(evt.target.id.replace('c', ''));
 	playerClicks.push(idx);
 	if (idx === circleSequence[playerClicks.length - 1]) {
-		console.log('correct')
 		if (circleSequence.length === playerClicks.length) {
 			getNextTurn();
 			animateSequence();
 		}
-		console.log(circleSequence + ' circleSequence');
-		console.log(playerClicks + ' playerClicks');
 	} else {
 		gameOver = true;
 	}
