@@ -1,5 +1,7 @@
 # Simon
 
+![alt text](https://i.imgur.com/nZBvOIY.png "Simon Screenshot")
+
 ## Description
 ### *Why Play Simon?*
 
