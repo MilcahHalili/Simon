@@ -13,7 +13,7 @@ Flex your developer muscles with a memory game. Sure, coding involves lots of lo
 
 ## Getting Started
 
-**[Play the Game] (https://milcahhalili.github.io/Simon/)**
+**[Play the Game] (https://milcahhalili.github.io/simon/)**
 
 ### *How to Play*
 
@@ -23,7 +23,7 @@ This version of Simon doesn't have the typical win-lose logic. As long as the pl
 
 ## Next Steps
 
-### Bugs
+### *Bugs*
 
 The console returns
 
@@ -33,7 +33,7 @@ in regards to the audio, mp3 links, despite the fact that the sounds do load.
 
 On mobile phones, the game does not conform to the size of the screen.
 
-### Build On!
+### *Build On!*
 
 If you'd like to build upon the current version of this game, then I'd suggest you create a **HIGH SCORE** feature.
 
