@@ -37,4 +37,6 @@ On mobile phones, the game does not conform to the size of the screen.
 
 If you'd like to build upon the current version of this game, then I'd suggest you create a **HIGH SCORE** feature.
 
+Another potential feature would be to add a setTimeout function that resets the animateSequence function if the player does not make a move after a certain amount of seconds.
+
 Lastly, refer to the **Bugs** section above for further building suggestions.
