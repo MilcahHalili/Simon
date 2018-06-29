@@ -13,7 +13,7 @@ Flex your developer muscles with a memory game. Sure, coding involves lots of lo
 
 ## Getting Started
 
-**[Play the Game] (https://milcahhalili.github.io/simon/)**
+**[Play the Game] (https://milcahhalili.github.io/Simon/)**
 
 ### *How to Play*
 
