@@ -7,7 +7,7 @@ var circleSequence = [];
 var playerClicks = [];
 var gameOver, ignoreClicks;
 /*----- cached element references -----*/
-var turnEl = document.querySelector('h1');
+var turnEl = document.querySelector('h2');
 var startBtn = document.getElementById('start-btn');
 var replayBtn = document.getElementById('replay-btn');
 /*----- event listeners -----*/
@@ -41,7 +41,7 @@ function render() {
     if (gameOver) circleSequence = [];
     startBtn.disabled = !gameOver;
     replayBtn.disabled = gameOver;
-	turnEl.textContent = gameOver ? 'CLICK START BUTTON' : circleSequence.length;
+	turnEl.textContent = gameOver ? 'click start button' : circleSequence.length;
 }
 
 function startGame() {

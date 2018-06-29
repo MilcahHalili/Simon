@@ -4,11 +4,21 @@ html, body, * {
 body {
 	background-color: #ff9966;
 }
+h1 {
+    display: flex;
+    justify-content: center;
+}
+h1, h2 {
+	font-size: 46px;
+	font-family: 'Ubuntu', sans-serif;
+	color: #FFFFFF;
+}
 .box {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	background: linear-gradient(to bottom, #ff9966 0%, #ff99cc 100%);
+    background: linear-gradient(to bottom, #ff9966 0%, #ff99cc 100%);
+    margin-top: -2.5%;
 }
 .box2 {
 	display: flex;
@@ -20,12 +30,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-wrap: nowrap;
-}
-#turn-num {
-	font-size: 46px;
-	font-family: 'Ubuntu', sans-serif;
-	color: #FFFFFF;
+    flex-wrap: nowrap;
+    margin-top: -2.5%;
 }
 .btn-box {
 	display: flex;
@@ -68,19 +74,19 @@ body {
 }
 #c0 {
 	background: #C04CFD;
-	margin: 2.5%;
+	margin: 2%;
 }
 #c1 {
 	background: #FFFD98;
-	margin: 2.5%;
+	margin: 2%;
 }
 #c2 {
 	background: #23f0ff;
-	margin: 2.5%;
+	margin: 2%;
 }
 #c3 {
 	background: rgb(71, 233, 82);
-	margin: 2.5%;
+	margin: 2%;
 }
 .circ.avoid-clicks {
 	pointer-events: none;
