@@ -39,21 +39,14 @@ h1, h2 {
 	align-items: center;
 	flex-wrap: nowrap;
 }
-#start-btn {
+#start-btn, #replay-btn {
 	font-size: 28px;
 	font-family: 'Ubuntu', sans-serif;
 	color: #FFFFFF;
 	background-color: #ff99cc;
-    border-width: .10em solid #ffffff;
+    border-width: .10em;
+    border-color: #ffffff;
     margin-left: 1.25%;
-}
-#replay-btn {
-	font-size: 28px;
-	font-family: 'Ubuntu', sans-serif;
-	color: #FFFFFF;
-	background-color: #ff99cc;
-	border-width: .10em solid #ffffff;
-	margin-left: 3.5%;
 }
 .circ {
 	width: 200px;
