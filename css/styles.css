@@ -1,3 +1,12 @@
+@viewport {
+	width: 600px;
+	zoom: 1.0;
+}
+@media only screen and (max-width: 600px) {
+	box1, box2 {
+		max-width: 600px;
+	}
+} 
 html, body, * {
 	box-sizing: border-box;
 }
@@ -6,7 +15,8 @@ body {
 }
 h1 {
     display: flex;
-    justify-content: center;
+	justify-content: center;
+	text-align: center;
 }
 h1, h2 {
 	font-size: 46px;
