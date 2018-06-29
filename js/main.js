@@ -34,23 +34,23 @@ document.getElementById('c3').addEventListener('click', function() {
 function initialize() {
 	gameOver = true;
     ignoreClicks = true;
-    replayBtn.disabled = true;
 	render();
 }
 // Responsible for transfering all state to the DOM
 function render() {
-	startBtn.disabled = !gameOver;
+    if (gameOver) circleSequence = [];
+    startBtn.disabled = !gameOver;
+    replayBtn.disabled = gameOver;
 	turnEl.textContent = gameOver ? 'CLICK START BUTTON' : circleSequence.length;
 }
 
 function startGame() {
-    replayBtn.disabled = false;
 	gameOver = false;
 	circleSequence = [];
-	nextSequence();
+	getNextTurn();
 	console.log(circleSequence + ' circleSequence');
 	console.log(playerClicks + ' playerClicks');
-	gameSequence();
+	animateSequence();
 	render();
 }
 
@@ -59,11 +59,6 @@ function replay() {
 	startGame();
 }
 
-function clearState() {
-	if (gameOver = true) {
-		circleSequence = [];
-	}
-}
 // Gameplay functionality
 function handleCircClick(evt) {
 	if (ignoreClicks) return;
@@ -74,24 +69,23 @@ function handleCircClick(evt) {
 	if (idx === circleSequence[playerClicks.length - 1]) {
 		console.log('correct')
 		if (circleSequence.length === playerClicks.length) {
-			nextSequence();
-			gameSequence();
+			getNextTurn();
+			animateSequence();
 		}
 		console.log(circleSequence + ' circleSequence');
 		console.log(playerClicks + ' playerClicks');
 	} else {
 		gameOver = true;
-		clearState();
 	}
 	render();
 }
 
-function nextSequence() {
+function getNextTurn() {
 	var rand = Math.floor(Math.random() * 4);
 	circleSequence.push(rand);
 }
 
-function gameSequence() {
+function animateSequence() {
 	ignoreClicks = true;
 	circleSequence.forEach(function(seqIdx, idx) {
 		setTimeout(function() {
