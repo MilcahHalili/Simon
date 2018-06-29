@@ -13,22 +13,6 @@ var replayBtn = document.getElementById('replay-btn');
 startBtn.addEventListener('click', startGame);
 replayBtn.addEventListener('click', startGame);
 document.querySelector('section').addEventListener('click', handleCircClick);
-c0.addEventListener('click', function() {
-	player.src = sounds[0];
-	player.play();
-});
-c1.addEventListener('click', function() {
-	player.src = sounds[1];
-	player.play();
-});
-c2.addEventListener('click', function() {
-	player.src = sounds[2];
-	player.play();
-});
-c3.addEventListener('click', function() {
-	player.src = sounds[3];
-	player.play();
-});
 /*----- functions -----*/
 function initialize() {
 	gameOver = true;
@@ -72,6 +56,8 @@ function handleCircClick(evt) {
 	if (!evt.target.classList.contains('circ')) return;
 	evt.className += ' activated';
 	var idx = parseInt(evt.target.id.replace('c', ''));
+	player.src = sounds[idx];
+	player.play();
 	playerClicks.push(idx);
 	if (idx === circleSequence[playerClicks.length - 1]) {
 		if (circleSequence.length === playerClicks.length) {
