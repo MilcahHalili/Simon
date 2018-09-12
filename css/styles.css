@@ -13,15 +13,13 @@ html, body, * {
 body {
 	background-color: #ff9966;
 }
-h1 {
-    display: flex;
-	justify-content: center;
-	text-align: center;
-}
 h1, h2 {
 	font-size: 46px;
 	font-family: 'Ubuntu', sans-serif;
 	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	text-align: center;
 }
 .box {
 	display: flex;
