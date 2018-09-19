@@ -15,6 +15,7 @@ html, body, * {
 
 body {
 	background-color: #ff9966;
+	margin: 0;
 }
 
 h1 {
