@@ -22,7 +22,7 @@ function initialize() {
 function render() {
     startBtn.disabled = !gameOver;
     replayBtn.disabled = gameOver;
-	document.querySelector('h2').textContent = gameOver ? 'click start button' : circleSequence.length;
+	document.querySelector('h2').textContent = gameOver ? 'CLICK START' : circleSequence.length;
 }
 function startGame() {
 	gameOver = false;

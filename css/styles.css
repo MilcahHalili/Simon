@@ -75,8 +75,8 @@ h1, h2 {
 }
 
 .circ {
-	width: 14%;
-	height: 14%;
+	width: 200px;
+	height: 200px;
 	border-radius: 50%;
 	box-shadow: inset 0 1px 0 rgba(255,255,255,0.3),0 1px 3px rgba(0,0,0,0.4);
 }
@@ -118,4 +118,21 @@ h1, h2 {
 
 .circ.avoid-clicks {
 	pointer-events: none;
+}
+
+@media screen and (max-width: 500px) {
+	.circ {
+		width: 150px;
+		height: 150px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.circ {
+		width: 100px;
+		height: 100px;
+	}
+	#turn-num {
+		font-size: 30px;
+	}
 }
