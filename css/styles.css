@@ -2,95 +2,116 @@
 	width: 600px;
 	zoom: 1.0;
 }
+
 @media only screen and (max-width: 600px) {
 	box1, box2 {
 		max-width: 600px;
 	}
-} 
+}
+
 html, body, * {
 	box-sizing: border-box;
 }
+
 body {
 	background-color: #ff9966;
 }
+
 h1 {
-    display: flex;
+	display: flex;
 	justify-content: center;
 	text-align: center;
 }
+
 h1, h2 {
 	font-size: 46px;
 	font-family: 'Ubuntu', sans-serif;
 	color: #FFFFFF;
 }
+
 .box {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-    background: linear-gradient(to bottom, #ff9966 0%, #ff99cc 100%);
-    margin-top: -2.5%;
+	background: linear-gradient(to bottom, #ff9966 0%, #ff99cc 100%);
+	margin-top: -2.5%;
 }
+
 .box2 {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	background: linear-gradient(to bottom, #ff99cc 0%, #ff9966 100%);
 }
+
 .player-turn-box {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-    flex-wrap: nowrap;
-    margin-top: -2.5%;
+	flex-wrap: nowrap;
+	margin-top: -2.5%;
 }
+
 .btn-box {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: nowrap;
 }
+
 #start-btn, #replay-btn {
 	font-size: 28px;
 	font-family: 'Ubuntu', sans-serif;
 	color: #FFFFFF;
 	background-color: #ff99cc;
-    border-width: .10em;
-    border-color: #ffffff;
-    margin-left: 1.25%;
+	border-width: .10em;
+	border-color: #ffffff;
+	margin-left: 1.25%;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.3),0 1px 3px rgba(0,0,0,0.4);
 }
+
 .circ {
-	width: 200px;
-	height: 200px;
+	width: 14%;
+	height: 14%;
 	border-radius: 50%;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.3),0 1px 3px rgba(0,0,0,0.4);
 }
+
 .circ:before {
 	content: '';
 	display: inline-block;
 	padding-top: 100%;
 }
+
 .circ:active {
 	opacity: .5;
 }
+
 .circ.activated {
 	opacity: .5;
 	border: 8px solid #ffffff;
 }
+
 #c0 {
 	background: #C04CFD;
 	margin: 2%;
 }
+
 #c1 {
 	background: #FFFD98;
 	margin: 2%;
 }
+
 #c2 {
 	background: #23f0ff;
 	margin: 2%;
 }
+
 #c3 {
 	background: rgb(71, 233, 82);
 	margin: 2%;
 }
+
 .circ.avoid-clicks {
 	pointer-events: none;
 }
