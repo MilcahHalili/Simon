@@ -1,6 +1,6 @@
 # Simon
 
-![Simon](https://i.imgur.com/nZBvOIY.png "Simon Screenshot")
+![Simon](https://i.imgur.com/rafNHY9.png "Simon Screenshot")
 
 ## Description
 ### *Why Play Simon?*
