@@ -1,7 +1,6 @@
 /*----- constants -----*/
-var sounds = ['https://s3.amazonaws.com/freecodecamp/simonSound1.mp3', 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3', 'https://s3.amazonaws.com/freecodecamp/simonSound3.mp3', 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'];
-var player = new Audio();
-var circles = [c0, c1, c2, c3];
+const sounds = ['https://s3.amazonaws.com/freecodecamp/simonSound1.mp3', 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3', 'https://s3.amazonaws.com/freecodecamp/simonSound3.mp3', 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'];
+const player = new Audio();
 /*----- app's state (variables) -----*/
 var circleSequence = [];
 var playerClicks = [];
@@ -21,7 +20,7 @@ function initialize() {
 }
 function render() {
     startBtn.disabled = !gameOver;
-    replayBtn.disabled = gameOver;
+		replayBtn.disabled = gameOver;
 	document.querySelector('h2').textContent = gameOver ? 'CLICK START' : circleSequence.length;
 }
 function startGame() {
@@ -37,7 +36,7 @@ function getNextTurn() {
 function animateSequence() {
 	ignoreClicks = true;
 	circleSequence.forEach(function(seqIdx, idx) {
-		setTimeout(function() {
+		setTimeout(function() {	
 			var elem = document.getElementById('c' + seqIdx);
 			elem.className += ' activated';
 			player.src = sounds[seqIdx];
