@@ -1,10 +1,12 @@
 /*----- constants -----*/
 const sounds = ['https://s3.amazonaws.com/freecodecamp/simonSound1.mp3', 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3', 'https://s3.amazonaws.com/freecodecamp/simonSound3.mp3', 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'];
 const player = new Audio();
+
 /*----- app's state (variables) -----*/
 var circleSequence = [];
 var playerClicks = [];
 var gameOver, ignoreClicks;
+
 /*----- cached element references -----*/
 var startBtn = document.getElementById('start-btn');
 var replayBtn = document.getElementById('replay-btn');
@@ -12,21 +14,25 @@ const c0 = document.getElementById('c0');
 const c1 = document.getElementById('c1');
 const c2 = document.getElementById('c2');
 const c3 = document.getElementById('c3');
+
 /*----- event listeners -----*/
 startBtn.addEventListener('click', startGame);
 replayBtn.addEventListener('click', startGame);
 document.querySelector('section').addEventListener('click', handleCircClick);
+
 /*----- functions -----*/
 function initialize() {
 	gameOver = true;
-    ignoreClicks = true;
+	ignoreClicks = true;
 	render();
 }
+
 function render() {
-    startBtn.disabled = !gameOver;
-		replayBtn.disabled = gameOver;
+	startBtn.disabled = !gameOver;
+	replayBtn.disabled = gameOver;
 	document.querySelector('h2').textContent = gameOver ? 'CLICK START' : circleSequence.length;
 }
+
 function startGame() {
 	gameOver = false;
 	circleSequence = [];
@@ -34,9 +40,11 @@ function startGame() {
 	animateSequence();
 	render();
 }
+
 function getNextTurn() {
 	circleSequence.push(Math.floor(Math.random() * 4));
 }
+
 function animateSequence() {
 	ignoreClicks = true;
 	circleSequence.forEach(function(seqIdx, idx) {
@@ -54,6 +62,7 @@ function animateSequence() {
 	});
 	playerClicks = [];
 }
+
 function handleCircClick(evt) {
 	if (ignoreClicks) return;
 	if (!evt.target.classList.contains('circ')) return;
@@ -72,4 +81,5 @@ function handleCircClick(evt) {
 	}
 	render();
 }
+
 initialize();
