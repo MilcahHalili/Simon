@@ -3,13 +3,27 @@ const sounds = ['https://s3.amazonaws.com/freecodecamp/simonSound1.mp3', 'https:
 const player = new Audio();
 
 /*----- app's state (variables) -----*/
-var circleSequence = [];
-var playerClicks = [];
-var gameOver, ignoreClicks;
+let circleSequence = [];
+let playerClicks = [];
+let gameOver, ignoreClicks;
+// refactor state and cached elem refs as properties in simon obj
+let simon = {
+	gameOver,
+	ignoreClicks,
+	circleSequence: [],
+	playerClicks: [],
+	circles: {
+		c0: [document.getElementById('c0')],
+		c1: [document.getElementById('c1')],
+		c2: [document.getElementById('c2')],
+		c3: [document.getElementById('c3')]
+	},
+	sounds: ['https://s3.amazonaws.com/freecodecamp/simonSound1.mp3', 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3', 'https://s3.amazonaws.com/freecodecamp/simonSound3.mp3', 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3']
+}
 
 /*----- cached element references -----*/
-var startBtn = document.getElementById('start-btn');
-var replayBtn = document.getElementById('replay-btn');
+let startBtn = document.getElementById('start-btn');
+let replayBtn = document.getElementById('replay-btn');
 const c0 = document.getElementById('c0');
 const c1 = document.getElementById('c1');
 const c2 = document.getElementById('c2');
@@ -47,13 +61,13 @@ function getNextTurn() {
 
 function animateSequence() {
 	ignoreClicks = true;
-	circleSequence.forEach(function(seqIdx, idx) {
-		setTimeout(function() {	
-			var elem = document.getElementById('c' + seqIdx);
+	circleSequence.forEach((seqIdx, idx) => {
+		setTimeout(() => {
+			let elem = document.getElementById('c' + seqIdx);
 			elem.className += ' activated';
-			player.src = sounds[seqIdx];
+			player.src = simon.sounds[seqIdx]; // sounds[seqIdx];
 			player.play();
-			setTimeout(function() {
+			setTimeout(() => {
 				elem.classList.remove('activated');
 				player.pause();
 				if (idx === circleSequence.length - 1) ignoreClicks = false;
@@ -67,7 +81,7 @@ function handleCircClick(evt) {
 	if (ignoreClicks) return;
 	if (!evt.target.classList.contains('circ')) return;
 	evt.className += ' activated';
-	var idx = parseInt(evt.target.id.replace('c', ''));
+	let idx = parseInt(evt.target.id.replace('c', ''));
 	player.src = sounds[idx];
 	player.play();
 	playerClicks.push(idx);
