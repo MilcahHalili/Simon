@@ -27,7 +27,8 @@ This version of Simon doesn't have the typical win-lose logic. As long as the pl
 
 ### *Bugs*
 
-On mobile phones, the game does not conform to the size of the screen.
+1. On mobile phones, the timing of sound and animation sequence is off.
+2. The game isn't centered vertically.
 
 ### *Build On!*
 
