@@ -62,7 +62,7 @@ function animateSequence() {
 				player.pause();
 				if (idx === circleSequence.length - 1) simon.ignoreClicks = false;
 			}, 800)
-		}, 500 + (idx * 1000));
+		}, 800 + (idx * 1000));
 	});
 	playerClicks = [];
 }
