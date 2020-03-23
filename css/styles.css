@@ -90,7 +90,7 @@ h1, h2 {
 	opacity: .5;
 }
 
-.circ.activated {
+.circ.activated, .circ:active {
 	opacity: .5;
 	border: 8px solid #ffffff;
 }

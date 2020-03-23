@@ -1,6 +1,3 @@
-/*----- constants -----*/
-const player = new Audio();
-
 /*----- app's state (variables) -----*/
 let simon = {
 	gameOver: true,
@@ -12,8 +9,9 @@ let simon = {
 }
 
 /*----- cached element references -----*/
-let startBtn = document.getElementById('start-btn');
-let replayBtn = document.getElementById('replay-btn');
+const player = new Audio();
+const startBtn = document.getElementById('start-btn');
+const replayBtn = document.getElementById('replay-btn');
 
 /*----- event listeners -----*/
 startBtn.addEventListener('click', startGame);
@@ -47,14 +45,18 @@ function getNextTurn() {
 	circleSequence.push(Math.floor(Math.random() * 4));
 }
 
+function play(audio) {
+  player.src = simon.sounds[audio];
+  player.play();
+}
+
 function animateSequence() {
 	simon.ignoreClicks = true;
 	circleSequence.forEach((seqIdx, idx) => {
 		setTimeout(() => {
 			let elem = simon.circle[seqIdx];
 			elem.className += ' activated';
-			player.src = simon.sounds[seqIdx];
-			player.play();
+			play(seqIdx)
 			setTimeout(() => {
 				elem.classList.remove('activated');
 				player.pause();
@@ -68,10 +70,8 @@ function animateSequence() {
 function handleCircClick(evt) {
 	if (simon.ignoreClicks) return;
 	if (!evt.target.classList.contains('circ')) return;
-	evt.className += ' activated';
 	let idx = parseInt(evt.target.id.replace('c', ''));
-	player.src = simon.sounds[idx];
-	player.play();
+	play(idx);
 	playerClicks.push(idx);
 	if (idx === circleSequence[playerClicks.length - 1]) {
 		if (circleSequence.length === playerClicks.length) {

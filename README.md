@@ -1,6 +1,6 @@
 # Simon
 
-![Simon](https://i.imgur.com/rafNHY9.png "Simon Screenshot")
+![alt text](https://i.imgur.com/nZBvOIY.png "Simon Screenshot")
 
 ## Description
 ### *Why Play Simon?*
@@ -26,6 +26,12 @@ This version of Simon doesn't have the typical win-lose logic. As long as the pl
 ## Next Steps
 
 ### *Bugs*
+
+The console returns
+
+> *Failed to load resource: the server responded with a status of 403 (Forbidden)*
+
+in regards to the audio, mp3 links, despite the fact that the sounds do load.
 
 On mobile phones, the game does not conform to the size of the screen.
 
